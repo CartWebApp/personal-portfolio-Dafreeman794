@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Khula:wght@300;400;600;700;800&family=League+Gothic&display=swap');
+
+.alatsi-regular {
+  font-family: "Alatsi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.league-gothic-regular {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.khula-regular {
+  font-family: "Khula", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+header {
+background-image: url(images/whirpool.png);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: "Alatsi", sans-serif;
+    font-size: 430px;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+}
+
+#categories {
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
+    font-family: "League Gothic", sans-serif;
+    font-size: 36px;
+    justify-content: flex-end;;
+}
+
+.option {
+    background-color: #488286;
+    border-radius: 18px;
+    width: 202px;
+    height: 64px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
