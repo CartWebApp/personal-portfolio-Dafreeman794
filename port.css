@@ -11,8 +11,7 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .khula-regular {
@@ -21,12 +20,24 @@
   font-style: normal;
 }
 
+body {
+  margin: 0px;
+}
+
 
 header {
 background-image: url(images/whirpool.png);
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+gap: 100px;
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+#nametainer {
+  display: flex;
 }
 
 h1 {
@@ -34,23 +45,63 @@ h1 {
     font-size: 430px;
     color: transparent;
     -webkit-text-stroke: 2px white;
+    margin: 0px;
+}
+
+#container {
+  display: flex;
+  gap: 12px;
+  font-family: "League Gothic", sans-serif;
+  font-size: 26px;
+
+}
+
+#Resume {
+  background-color: #488286;
+  color: white;
+  border-radius: 18px;
+  text-decoration: none;
+  width: 110px;
+  height: 60px;
+  display: flex;
+}
+
+
+#Email {
+  background-color: #488286;
+  color: white;
+  border-radius: 18px;
+  text-decoration: none;
+  width: 110px;
+  height: 60px;
+  display: flex;
 }
 
 #categories {
-    display: flex;
-    gap: 70px;
-    flex-direction: column;
-    font-family: "League Gothic", sans-serif;
-    font-size: 36px;
-    justify-content: flex-end;;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+  font-family: "Alasti", sans-serif;
+  font-size: 36px;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .option {
     background-color: #488286;
+    color: white;
     border-radius: 18px;
+    text-decoration: none;
     width: 202px;
     height: 64px;
     display: flex;
     text-align: center;
     justify-content: center;
+}
+
+#upwards {
+  border: none;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
 }
