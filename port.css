@@ -48,12 +48,22 @@ h1 {
     margin: 0px;
 }
 
-#container {
+h2 {
+  font-family: "League Gothic", sans-serif;
+  font-size: 100px;
+
+}
+
+p {
+  font-family: "Khula", sans-serif;
+  font-size: 25px;
+}
+
+#contact {
   display: flex;
   gap: 12px;
   font-family: "League Gothic", sans-serif;
   font-size: 26px;
-
 }
 
 #Resume {
@@ -81,7 +91,7 @@ h1 {
   display: flex;
   gap: 100px;
   flex-direction: column;
-  font-family: "Alasti", sans-serif;
+  font-family: "Khula", sans-serif;
   font-size: 36px;
   align-items: flex-end;
   justify-content: center;
@@ -89,7 +99,7 @@ h1 {
 
 .option {
     background-color: #488286;
-    color: white;
+    color: #B7D5D4;
     border-radius: 18px;
     text-decoration: none;
     width: 202px;
@@ -104,4 +114,9 @@ h1 {
   position: fixed;
   display: flex;
   justify-content: flex-end;
+}
+
+#about {
+  background-color: #305252;
+  color: white;
 }
