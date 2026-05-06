@@ -26,14 +26,53 @@ body {
 
 
 header {
-background-image: url(images/whirpool.png);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-gap: 100px;
-width: 100%;
-display: flex;
-flex-direction: row;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  gap: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+[id^="whirlpool"] {
+  left: -7%;
+  top: -10%;
+  height: 120vw;
+  width: 120vw;
+  background-image: url(images/whirpool.png);
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+#whirlpool {
+  height: 100vw;
+  width: 100vw;
+  z-index: -1;
+  border-radius: 100%;
+  animation: 100s linear 1s reverse infinite rotatethreesixty;
+}
+
+#whirlpool-bg {
+  height: 120vw;
+  width: 120vw;
+  z-index: -2;
+}
+  
+
+@keyframes rotatethreesixty {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #nametainer {
