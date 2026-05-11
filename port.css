@@ -24,45 +24,31 @@ body {
   margin: 0px;
 }
 
-header {
+#hero {
+  position: absolute;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  gap: 100px;
-  width: min(1400px, 90%);
+  gap: 70px;
+  width: min(100%, 100%);
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-[id^="whirlpool"] {
-  left: -7%;
-  top: -10%;
-  height: 120vw;
-  width: 120vw;
+
+#whirlpool-bg {
+  height: 100vw;
+  width: 100vw;
+  z-index: -2;
   background-image: 
   url(images/whirpool.png);
   position: absolute;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
 
-#whirlpool {
-  height: 100vw;
-  width: 100vw;
-  z-index: -1;
-  border-radius: 100%;
-  animation: 100s linear 1s 
-  reverse infinite 
-  rotatethreesixty;
-}
-
-#whirlpool-bg {
-  height: 120vw;
-  width: 120vw;
-  z-index: -2;
 }
   
 @keyframes rotatethreesixty {
@@ -90,18 +76,19 @@ header {
 }
 
 h1 {
+  position: relative;
   font-family: "Alatsi", sans-serif;
-  font-size: clamp(5rem, 12vw, 11rem);
+  font-size: clamp(16rem, 12vw, 11rem);
   line-height: .9;
   letter-spacing: -6px;
   font-weight: 700;
-  background: linear-gradient
-  (to bottom, #ffffff 50%, #7dd8d6 50%);
+  background: linear-gradient(to bottom, #ffffff 50%, #7dd8d6 50%);
   -webkit-background-clip: text;
   color: transparent;
   text-shadow:
   0 0 12px rgba(125,216,214,.3);
   margin: 0px;
+  top: 190px;
 }
 
 h2 {
@@ -128,13 +115,26 @@ p {
 }
 
 #Resume {
-  background-color: #488286;
-  color: white;
+  background: rgba(72,130,134,.18);
+  backdrop-filter: blur(12px);
+  border: 1px solid
+  rgba(255,255,255,.15);
+  box-shadow:
+  0 0 18px rgba(72,130,134,.25);
   border-radius: 18px;
+  transition:
+  transform .3s ease,
+  background .3s ease,
+  box-shadow .3s ease;
+  color: #B7D5D4;
   text-decoration: none;
-  width: 110px;
+  width: 172px;
   height: 60px;
+  font-size: 40px;
+  font-family: "League Gothic", sans-serif;
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 
@@ -226,28 +226,22 @@ section::before {
   position: fixed;
   display: flex;
   justify-content: flex-end;
+  z-index: 2;
+  border-radius: 100%;
+  background: transparent;
+  border-color:rgba(48, 82, 82, 1);
 }
 
-#AboutandProjects {
-  background: #305252;
-  background: linear-gradient
-  (0deg, rgba(108, 184, 184, 1) 37%, 
-  rgba(48, 82, 82, 1) 100%);
-  color: white;
-  min-height: 100vh;
-  padding: 8rem 6rem;
-  width: 100%;
-}
-
-#about {
+#aboutContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2,1fr);
-  height: 360px;
-  gap: 70px; 
+  grid-row-gap: 1px;;
+  color: white;
+  min-height: 100vh;
   place-items: center;
   Background:
-  rgba(0,0,0,.25);
+  rgb(24, 67, 86);
   backdrop-filter: blur(10px);
   border:
   1px solid rgba(255,255,255,.1);
@@ -257,38 +251,40 @@ section::before {
   0 0 30px rgba(0,0,0,.35);
 }
 
-#about img {
+
+#aboutImg {
   grid-row: span 2 / span 2;
   width: 576px;
-  height: 718px;
+  height: 576px;
+  border-radius: 100%;
 }
 
-#about h2 {
-  grid-column-start: 2;
-}
-
-#about p {
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-
-#projects {
+#projectsTainer {
   display: flex;
+  flex-direction: column;
+  background: rgba(48, 82, 82, 1);
   justify-content: space-between;
   margin: 0px;
 }
 
+#cardlist {
+  display: flex;
+  flex-direction: row;
+  background: rgba(48, 82, 82, 1);
+  justify-content: space-between;
+  margin: 0px;
+}
 
 .project-card {
-    background:
-    rgba(255,255,255,.05);
-    border:
-    1px solid rgba(255,255,255,.08);
-    padding: 2rem;
-    border-radius: 24px;
-    transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+  background:
+  rgba(255,255,255,.05);
+  border:
+  1px solid rgba(255,255,255,.08);
+  padding: 2rem;
+  border-radius: 24px;
+  transition:
+  transform .3s ease,
+  box-shadow .3s ease;
 }
 
 .project-card:hover {
