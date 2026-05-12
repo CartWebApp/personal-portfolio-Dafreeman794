@@ -2,115 +2,258 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="images/NC.png">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Nate Cook - Web Developer</title>
     <link rel="stylesheet" href="port.css">
-    <title>Nate C</title>
 </head>
-<body>
-<header id="hero">
-    <div id="whirlpool-bg"></div>
-    <div id="overlay"></div>
-    <div class="hero-topbar">
-        <a id="Resume" href="resume.html">Resume</a>
-    </div>
-    <div id="heroContent">
-        <div class="heroTextainer">
-            <h1>Nate<br>Cook</h1>
+<body id="home">
+    <header id="hero">
+        <div id="vortex"></div>
+        <div class="shadow-overlay"></div>
+        <div class="site-shell">
+            <div id="herobar">
+                <a id="Resume" href="resume.html">
+                    Resume
+                </a>
+            </div>
+            <div id="heroGrid">
+                <section id="heroCopy">
+                    <p class="eyebrow">
+                        Wassup, I'm
+                    </p>
+                    <h1>
+                    Nate<br>Cook
+                    </h1>
+                    <p class="Summary">
+                        I make cool stuff.
+                    </p>
+                </section>
+                <nav class="stellar-nav">
+                    <a href="#about-panel" class="nav-pill">
+                        About
+                    </a>
+                    <a href="#project-vault" class="nav-pill">
+                        Projects
+                    </a>
+                    <a href="#timeline-sector" class="nav-pill">
+                        Journey
+                    </a>
+                    <a href="#archive-sector" class="nav-pill">
+                        Written
+                    </a>
+                </nav>
+            </div>
         </div>
-        <nav id="categories">
-            <a class="option" href="#">About</a>
-            <a class="option" href="#">Projects</a>
-            <a class="option" href="#">Journey</a>
-            <a class="option" href="#">Written</a>
-        </nav>
-    </div>
-    <button id="upwards"><img src="images/upwards.png" alt="Scroll up"></button>
-</header>
-    <div class="curve-divider">
-  <svg viewBox="0 0 1440 120">
-    <path
-      fill="#081414"
-      d="M0,64L120,74.7C240,85,480,107,720,101.3C960,96,1200,64,1320,48L1440,32V160H0Z">
-    </path>
-  </svg>
-</div>
-    <section id="aboutContainer">
-        <div class="glow"></div>
-                <img id="aboutImg" src="images/totallymeobvi.jpg" alt="here he is">
-                <span class="textainer">
-                    <h2>Who Is This Guy?</h2>
-                </span>
-            <p> Nate Cook is an aspiring Web developer at the Center of Advanced Research and Technology, extremely well-rounded in HTML, CSS, and <br> basic JavaScript, completely desiring a polished flow throughout each project. <br> Through every experience, He has attempted sharpening himself throughout  </p> 
-    </section>
-    <div class="curve-divider">
+        <button id="scroller">
+            <img
+                src="images/upwards.png"
+                alt="Scroll upward">
+        </button>
+    </header>
+    <div class="wave-divider">
         <svg viewBox="0 0 1440 120">
-          <path
-            fill="#081414"
-            d="M0,64L120,74.7C240,85,480,107,720,101.3C960,96,1200,64,1320,48L1440,32V160H0Z">
-          </path>
+            <path
+                fill="#081414"
+                d="M0,64L120,74.7C240,85,480,107,720,101.3C960,96,1200,64,1320,48L1440,32V160H0Z"/>
         </svg>
-      </div>
-      <section id="projectsTainer">
-      <h2>What He's Worked On:</h2>
-      <div id="cardlist">
-            <a class="project-card" href="Wiseup-info.html"><img src="images/wiseup.png" alt="Wise Up"></a>
-            <a class="project-card" href="Zoologix-info.html"><img src="images/wildside.png" alt="Zoologix"></a>
-            <a class="project-card" href="Bioshield-info.html"><img src="images/biologo.png" alt="Bio-Shield"></a>
-      </div>
-        </section>
-    <section id="journey">
-            <div class="glow"></div>
-            <h2>His Journey</h2>
-            <ul id="firsthalf">
-                    <li class="timeline1">Exp 1</li>
-                    <li class="timeline2">Exp 2</li>
-                    <li class="timeline3">Exp 3</li>
-                    <li class="timeline4">Exp 4</li>
-                    <li class="timeline5">Exp 5</li>
-            </ul>
-            <div id="line"></div>
-            <ul id="secondhalf">
-                    <li class="timeline6">Exp 6</li>
-                    <li class="timeline7">Exp 7</li>
-                    <li class="timeline8">Exp 8</li>
-                    <li class="timeline9">Exp 9</li>
-                    <li class="timeline10">Exp 10</li>
-            </ul>
-        </section>
-        <h3>If I'm not dead in half a decade...</h3>
-        <p>...I've always aspired of being either a client, or indie Game Developer,<br> 
-        fluent in multiple programming languages.</p>
-        <section id="written">
-            <div class="glow"></div>
-            <div id="writTainer">
-                <h2>His Written Works</h2>
-                <article>
-                    <img src="#" alt="Automated Enrichment">
-                    <h3>Automated Enrichment: Is It Worth Implementing?</h3>
-                    <p>If enrichment is the foundation of many different zoos around the world, how would a more automated system evolve it?<br>
-                        This paper researches how automation can both benefit, yet subtract from the moral, and physical qualities that make<br> 
-                        up an enriched environment.</p>
-                </article>
-                <article>
-                    <img src="#" alt="FNAF Remastered">
-                    <h3>Five Nights at Freddy's: Remastered</h3>
-                    <p> A month-long passion project designed to not only revamp the quite convulso story of <br>
-                        the hit video game series, Five Nights At Freddy's, but to expand, and redraw it into the narrative of<br>
-                        a man slowly losing himself to his own devices.</p>
-                </article>
-                <article>
-                    <img src="#" alt="The Conformity Cut">
-                    <h3>Stranger Things 5: The Conformity Cut</h3>
-                    <p>Hawkins fell. So have we. This remaster of the hit Netflix show's most divisive season gets a revamp with rewritten, <br>
-                    and new scenes, a new ending, and something else......</p>
-                </article>
+    </div>
+    <main>
+        <section id="about-panel"
+            class="content-section">
+            <div class="glow-up"></div>
+            <div class="site-shell">
+                <div class="about-card">
+                    <figure id="frame">
+                        <img
+                            src="images/me.png"
+                            alt="There he is">
+                    </figure>
+                    <article class="about-copy">
+                        <span class="section-label">
+                            ABOUT
+                        </span>
+                        <h2>
+                            Who Is This Guy?
+                        </h2>
+                        <p>
+                             Nate Cook is an aspiring Web developer at the Center of Advanced Research and Technology, extremely well-rounded in HTML, CSS, and <br> 
+                             basic JavaScript, completely desiring a polished flow throughout each project. <br> 
+                             Through every experience, He has attempted sharpening himself throughout  
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
+        <section id="project-vault"
+            class="content-section dark-panel">
+            <div class="site-shell">
+                <div class="section-heading">
+                    <span class="section-label">
+                        PROJECTS
+                    </span>
+                    <h2>
+                        What he's Worked On
+                    </h2>
+                </div>
+                <div class="project-grid">
+                    <a
+                        href="Wiseup-info.html"
+                        class="project-card">
 
-        <footer>
-            <p>@2026 Nathan G Cook</p>
-            <a href="FAQ.html">FAQ</a>
-        </footer>
+                        <img
+                            src="images/wiseup.png"
+                            alt="Wise Up">
+
+                        <div class="card-copy">
+                            <h3>
+                                Wise Up
+                            </h3>
+                            <p>
+                                Placeholder project text.
+                            </p>
+                        </div>
+                    </a>
+                    <a
+                        href="Zoologix-info.html"
+                        class="project-card">
+                        <img
+                            src="images/wildside.png"
+                            alt="Zoologix">
+                        <div class="card-copy">
+                            <h3>
+                                Zoologix
+                            </h3>
+                            <p>
+                                Placeholder project text.
+                            </p>
+                        </div>
+                    </a>
+                    <a
+                        href="Bioshield-info.html"
+                        class="project-card">
+                        <img
+                            src="images/biologo.png"
+                            alt="Bio Shield">
+                        <div class="card-copy">
+                            <h3>
+                                Bio Shield
+                            </h3>
+                            <p>
+                                Placeholder project text.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="timeline-sector"
+            class="timeline-sector">
+            <div class="glow-up"></div>
+            <div class="site-shell">
+                <div class="section-heading">
+                    <span class="section-label">
+                        TIMELINE
+                    </span>
+                    <h2>
+                        His Journey
+                    </h2>
+                </div>
+                <div id="timelineTrack">
+                    <div id="timeLineLine"></div>
+                    <article class="timeline-node">
+                        I had bare knowledge of HTML, but the concept of actually making any website look like an art piece was completely<br>
+                         foreign to me. I had absolutely no knowledge of how to style at all, and even then, most of the HTML<br>
+                          intellect I gained was lost.
+                    </article>
+                    <article class="timeline-node">
+                        The Bio-Shield project truly got the ball rolling. I discovered how an actual website was structured,<br>
+                         and processed due to guidance from my teacher, peers, and the AI-written code I was moderating.
+                    </article>
+                    <article class="timeline-node">
+                        While Bio-Shield laid the groundwork for my advancement as a developer, EECU’s “Wise UP!” calculator<br>
+                         was where it all truly clicked into place, and I could write sites that could really shine with JavaScript Capabilities. 
+                    </article>
+                    <article class="timeline-node">
+                        I feel as though this project is the shifting point I've been moving toward, almost bridging the gap between Web, and Game Design.<br>
+                          I really pray that my work, and passion is more than satisfactory. 
+                    </article>
+                    <article class="timeline-node">
+                         I especially enjoyed learning about my peer’s way of designing, and developing a project. The way their lines of improvements<br>
+                          differed from mine. We also discuss our way of thinking, and construct upon each other. It also goes without saying that they’re some of the warmest,<br>
+                          and kindest people I've met. 
+                    </article>
+                </div>
+                <div id="future">
+                    <h3>
+                        If I'm not dead in Half a decade....
+                    </h3>
+                    <p>
+                        ...I've always aspired of being either a client, or indie Game Developer,<br> 
+                     either working for a AAA corperation(except EA lol), or a localized team of developers. I could also get into a  Above all, being a storyteller at heart,<br>
+                      I really pray I can spin a really gravitating story using this field.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="write-sector" 
+        class="content-section archive-panel">
+            <div class="glow-up"></div>
+            <div class="site-shell">
+                <div class="section-heading">
+                    <span id="section-label">
+                        WRITING
+                    </span>
+                    <h2>
+                        Written Works
+                    </h2>
+                </div>
+                <div id="article-stack">
+                    <article class="feature-card">
+                        <iframe src="pdfs/research.pdf" width="100%" height="300px" style="border: none;" alt="Article preview">
+                             <p>Your browser does not support iframes. <a href="pdfs/research.pdf">Download the PDF</a>.</p>
+                        </iframe>
+                        <div class="feature-copy">
+                            <h3>Automated Enrichment: Is It Worth Implementing?</h3>
+                            <p>
+                                If enrichment is the foundation of many different zoos around the world, how would a more automated system evolve it?<br>
+                                This paper researches how automation can both benefit, yet subtract from the moral, and physical qualities that make<br> 
+                                up an enriched environment.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <img src="#" alt="Article preview">
+                        <div class="feature-copy">
+                            <h3>Five Nights At Freddy's: Remastered</h3>
+                            <p>A month-long passion project designed to not only revamp the quite convulso story of <br>
+                        the hit video game series, Five Nights At Freddy's, but to expand, and redraw it into the narrative of<br>
+                        a man slowly losing himself to his own devices.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <img src="#" alt="Article preview">
+                        <div class="feature-copy">
+                            <h3> Stranger Things 5: The Conformity Cut</h3> 
+                            <p>Hawkins fell. So have we. This remaster of the hit Netflix show's most divisive season gets a revamp with rewritten, <br>
+                    and new scenes, a new ending, and something else......
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            © 2026 Nathan Cook
+        </p>
+        <a href="FAQ.html">
+            FAQ
+        </a>
+    </footer>
 </body>
 <script src="folio.js"></script>
 </html>

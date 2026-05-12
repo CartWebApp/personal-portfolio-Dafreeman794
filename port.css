@@ -1,380 +1,471 @@
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Khula:wght@300;400;600;700;800&family=League+Gothic&display=swap');
 
-.alatsi-regular {
-  font-family: "Alatsi", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+:root {
+    --bg-dark: #081414;
+    --bg-panel: rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.12);
+    --accent: #488286;
+    --mint: #B7D5D4;
+    --text: #ffffff;
 }
 
-.league-gothic-regular {
-  font-family: "League Gothic", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-
-.khula-regular {
-  font-family: "Khula", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0px;
+  color: var(--text);
+  overflow-x: hidden;
+  font-family: "Khula", sans-serif;
+}
+
+#home {
+    background: var(--bg-dark);
+}
+
+#card {
+    color: var(--text);
+    overflow-x: hidden;
+    font-family: "Khula", sans-serif;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.78)
+    ),
+    url(images/whirlpool.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.site-shell {
+    width: min(92%, 1500px);
+    margin: auto;
+}
+
+.content-section {
+    position: relative;
+    padding: 5rem 0;
 }
 
 #hero {
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  gap: 70px;
-  width: min(100%, 100%);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-
-#whirlpool-bg {
-  height: 100vw;
-  width: 100vw;
-  z-index: -2;
-  background-image: 
-  url(images/whirpool.png);
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-}
-  
-@keyframes rotatethreesixty {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+#vortex {
+    position: absolute;
+    inset: 0;
+    background-image: url(images/whirlpool.png);
+    background-size: cover;
+    background-position: center;
+    animation:rotateVortex 140s linear infinite;
+    z-index: -3;
 }
 
-#nametainer {
-  display: flex;
+.shadow-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.75)
+    );
+    z-index: -2;
 }
 
-#overlay {
-  position: absolute;
-  inset: 0;
-  background:linear-gradient
-  (to bottom, 
-  rgba(0,0,0,.2), 
-  rgba(0,0,0,.6));
-  z-index: 0;
+#herobar {
+    padding-top: 1rem;
 }
 
-h1 {
-  position: relative;
-  font-family: "Alatsi", sans-serif;
-  font-size: clamp(16rem, 12vw, 11rem);
-  line-height: .9;
-  letter-spacing: -6px;
-  font-weight: 700;
-  background: linear-gradient(to bottom, #ffffff 50%, #7dd8d6 50%);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow:
-  0 0 12px rgba(125,216,214,.3);
-  margin: 0px;
-  top: 190px;
+#heroGrid {
+    min-height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-h2 {
-  font-family: "League Gothic", sans-serif;
-  font-size: 100px;
-
+#heroCopy {
+    position: relative;
 }
 
-h3 {
-  font-family: "League Gothic", sans-serif;
-  font-size: 70px; 
+.eyebrow {
+    color: var(--mint);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: -.8rem;
 }
 
-p {
-  font-family: "Khula", sans-serif;
-  font-size: 25px;
+#heroCopy h1 {
+    font-family: "Alatsi", sans-serif;
+    font-size: clamp(6rem, 14vw, 13rem);
+    line-height: .82;
+    letter-spacing: -8px;
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff,
+        #7dd8d6
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 25px rgba(125,216,214,.25);
 }
 
-#contact {
-  display: flex;
-  gap: 12px;
-  font-family: "League Gothic", sans-serif;
-  font-size: 26px;
+.Summary {
+    max-width: 450px;
+    margin-top: .5rem;
+    font-size: 1.1rem;
+}
+
+.stellar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.nav-pill,
+#Resume {
+    background: rgba(72,130,134,.18);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    color: white;
+    text-decoration: none;
+    transition: .3s ease;
 }
 
 #Resume {
-  background: rgba(72,130,134,.18);
-  backdrop-filter: blur(12px);
-  border: 1px solid
-  rgba(255,255,255,.15);
-  box-shadow:
-  0 0 18px rgba(72,130,134,.25);
-  border-radius: 18px;
-  transition:
-  transform .3s ease,
-  background .3s ease,
-  box-shadow .3s ease;
-  color: #B7D5D4;
-  text-decoration: none;
-  width: 172px;
-  height: 60px;
-  font-size: 40px;
-  font-family: "League Gothic", sans-serif;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-
-#Email {
-  background-color: #488286;
-  color: white;
-  border-radius: 18px;
-  text-decoration: none;
-  width: 110px;
-  height: 60px;
-  display: flex;
-}
-
-#categories {
-  display: flex;
-  gap: 100px;
-  flex-direction: column;
-  font-family: "Khula", sans-serif;
-  font-size: 36px;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-section {
-  position: relative;
-}
-
-.glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background:
-  radial-gradient(
-  circle,rgba(72,130,134,.35),
-  transparent 70%);
-  filter: blur(80px);
-  z-index: -1;
-}
-
-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 150px;
-    background:
-    linear-gradient(
-  to bottom,
-  transparent,
-  rgba(0,0,0,.3));
-  pointer-events: none;
-}
-
-.option {
-    background: rgba(72,130,134,.18);
-    backdrop-filter: blur(12px);
-    border: 1px solid
-    rgba(255,255,255,.15);
-    box-shadow:
-    0 0 18px rgba(72,130,134,.25);
-    border-radius: 18px;
-    transition:
-    transform .3s ease,
-    background .3s ease,
-    box-shadow .3s ease;
-    color: #B7D5D4;
-    border-radius: 18px;
-    text-decoration: none;
-    width: 202px;
-    height: 64px;
+    width: 180px;
+    height: 58px;
     display: flex;
-    text-align: center;
+    align-items: center;
     justify-content: center;
+    font-family: "League Gothic",sans-serif;
+    font-size: 2rem;
 }
 
+.nav-pill {
+    width: 220px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
 
-.option:hover {
+.nav-pill:hover,
+#Resume:hover {
     transform: translateY(-5px);
-
     background: rgba(72,130,134,.35);
-
     box-shadow:
-    0 0 25px rgba(72,130,134,.45);
+     0 0 30px
+     rgba(72, 130, 134, 0.349);
 }
 
-#upwards {
-  border: none;
-  position: fixed;
-  display: flex;
-  z-index: 2;
-  border-radius: 100%;
-  background: transparent;
+#scroller {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 999;
 }
 
-#aboutContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2,1fr);
-  grid-row-gap: 1px;;
-  color: white;
-  min-height: 100vh;
-  place-items: center;
-  Background:
-  rgb(24, 67, 86);
-  backdrop-filter: blur(10px);
-  border:
-  1px solid rgba(255,255,255,.1);
-  border-radius: 32px;
-  padding: 4rem;
-  box-shadow:
-  0 0 30px rgba(0,0,0,.35);
+#scroller img {
+    width: 60%;
 }
 
 
-#aboutImg {
-  grid-row: span 2 / span 2;
-  width: 576px;
-  height: 576px;
-  border-radius: 100%;
+.wave-divider svg {
+    display: block;
+    width: 100%;
 }
 
-#projectsTainer {
-  display: flex;
-  flex-direction: column;
-  background: rgba(48, 82, 82, 1);
-  justify-content: space-between;
-  margin: 0px;
+#about-panel {
+    position: relative;
+    background:
+ linear-gradient(
+        to bottom,
+        #163434,
+        #0d1b1b
+    );
 }
 
-#cardlist {
-  display: flex;
-  flex-direction: row;
-  background: rgba(48, 82, 82, 1);
-  justify-content: space-between;
-  margin: 0px;
+.about-card {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 2.5rem;
+    backdrop-filter: blur(14px);
+}
+
+#frame img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit:cover;
+    object-position: top;;
+    border-radius: 50%;
+}
+
+.section-label {
+    color: var(--mint);
+    letter-spacing: 4px;
+    font-size: .85rem;
+}
+
+.about-copy p {
+    margin-top: .5rem;
+    max-width: 800px;
+}
+
+.dark-panel {
+    background: #081414;
+}
+
+.section-heading {
+    margin-bottom:
+    2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
 }
 
 .project-card {
-  background:
-  rgba(255,255,255,.05);
-  border:
-  1px solid rgba(255,255,255,.08);
-  padding: 2rem;
-  border-radius: 24px;
-  transition:
-  transform .3s ease,
-  box-shadow .3s ease;
+    background: var(--bg-panel);
+    border:
+    1px solid var(--glass-border);
+    border-radius: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: .35s ease;
+}
+
+#infotainer {
+
+    width:
+    min(1200px, 90%);
+
+    margin:
+    4rem auto;
+
+    padding:
+    4rem;
+
+    border-radius:
+    32px;
+
+    background:
+    rgba(10,20,20,.45);
+
+    backdrop-filter:
+    blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 
-  0 10px 40px rgba(0,0,0,.4);
+    transform: translateY(-8px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
 }
 
-#journey {
-  background-image: url('images/galaxy.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 1008px;
-  width: 100%;
-  color: white;
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.card-copy {
+  padding: 1.5rem;
+}
+
+.timeline-sector {
+  position:relative;
+  background-image:
+  url(images/galaxy.png);
+  background-size:cover;
+  background-position:center;
+  padding: 6rem 0;
+}
+
+#timelineTrack {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 1rem;
+  margin-top: 4rem;
 }
 
-.timeline1 { grid-area: 1 / 1 / 3 / 2; }
-.timeline2 { grid-area: 1 / 2 / 3 / 3; }
-.timeline3 { grid-area: 1 / 3 / 3 / 4; }
-.timeline4 { grid-area: 1 / 4 / 3 / 5; }
-.timeline5 { grid-area: 1 / 5 / 3 / 6; }
-.timeline6 { grid-area: 4 / 5 / 6 / 6; }
-.timeline7 { grid-area: 4 / 4 / 6 / 5; }
-.timeline8 { grid-area: 4 / 3 / 6 / 4; }
-.timeline9 { grid-area: 4 / 2 / 6 / 3; }
-.timeline10 { grid-area: 4 / 1 / 6 / 2; }
+#timeLineLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,.5);
+}
 
+.timeline-node {
+    position: relative;
+    padding: 4rem 1rem;
+    text-align: center;
+    border-radius: 24px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid var(--glass-border);
+    backdrop-filter:
+    blur(10px);
+    z-index:
+    2;
+}
 
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  gap: 85px;
+#future {
+    margin-top: 5rem;
+}
+
+#write-sector {
+    position: relative;
+    background-image: url(images/space.png);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+}
+
+#article-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    background:
+    rgba(0,0,0,.35);
+    border:
+    1px solid var(--glass-border);
+    border-radius: 30px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-copy {
+    padding: 2rem;
+}
+
+.glow-up {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background:
+    radial-gradient(
+        circle,
+        rgba(72,130,134,.25),
+        transparent 70%
+    );
+    filter: blur(100px);
+    z-index: -1;
 }
 
 
-
-#line {
-  background-color: white;
-  width: 100%;
-  height: 4px;
-  grid-area: 3 / 1 / 4 / 6;
+.site-footer {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2rem 5%;
 }
 
-.timeline {
-  background: linear-gradient
-  (to bottom, #45AB93 78%, 
-  transparent 100%);
-  height: 280px;
-  width: 190px;
+h2 {
+    font-family: "League Gothic",sans-serif;
+    font-size:
+    clamp(3rem, 7vw, 6rem);
+    line-height: .9;
 }
 
-#written {
-  background-image: url('images/space.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+h3 {
+    font-family: "League Gothic", sans-serif;
+    font-size: 2.8rem;
+    line-height: .95;
 }
 
-#writeContainer {
-  background-color: #305252;
-  width: 1229px;
-  height: 842px;
-  overflow: hidden;
-  display: flex;
+p {
+  font-size: 1.05rem;
 }
 
-/* mobile */
-@media (max-width: 900px){
+@keyframes rotateVortex {
 
-    .hero-content{
-        flex-direction: column;
-        text-align: center;
+    from {
+        transform: rotate(0deg);
     }
 
-    h1{
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    #heroGrid,
+    .about-card,
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stellar-nav {
+        width: 100%;
+    }
+
+    .nav-pill {
+        width: 100%;
+    }
+
+    #heroCopy h1 {
         font-size: 6rem;
     }
 
-    #categories{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    .about-card {
+        grid-template-columns: 1fr;
     }
 
+    .feature-card {
+        grid-template-columns: 1fr;
+    }
+
+    .portrait-frame img {
+        max-width: 350px;
+        margin: auto;
+    }
 }
