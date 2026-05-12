@@ -255,6 +255,8 @@ body {
 }
 
 .project-card {
+    display: flex;
+    align-items: center;
     background: var(--bg-panel);
     border:
     1px solid var(--glass-border);
