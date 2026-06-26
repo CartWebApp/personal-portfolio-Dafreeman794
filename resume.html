@@ -4,23 +4,472 @@
     <meta charset="UTF-8">
     <link rel="StyleSheet" href="port.css">
     <link rel="icon" type="image/x-icon" href="images/NC.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <style>
+        /* Container styling for the portfolio page layout */
+        #restainer {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ==========================================================
+           RESUME 1: MISCELLANEOUS / GENERAL RESUME (Teal Theme)
+           ========================================================== */
+        .resume-misc {
+            width: 100%;
+            max-width: 850px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 50px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #333333;
+            box-sizing: border-box;
+        }
+
+        .resume-misc h1 {
+            color: #009696;
+            font-size: 42px;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .resume-misc .contact-info {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .resume-misc .contact-info a {
+            color: #009696;
+            text-decoration: none;
+        }
+
+        .resume-misc h2 {
+            color: #009696;
+            font-size: 18px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 4px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resume-misc p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+        }
+
+        .resume-misc .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .resume-misc .skills-grid li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .resume-misc .exp-item, .resume-misc .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .resume-misc .exp-header, .resume-misc .edu-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .resume-misc .company-location {
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .resume-misc ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        .resume-misc ul li {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+
+        /* ==========================================================
+           RESUME 2: WEB DEVELOPER RESUME (Split-Screen Theme)
+           ========================================================== */
+        .resume-dev {
+            width: 100%;
+            max-width: 850px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            font-family: 'Arial', sans-serif;
+            color: #222222;
+            box-sizing: border-box;
+            min-height: 1050px;
+        }
+
+        /* Left Sidebar Styling */
+        .resume-dev .sidebar {
+            width: 32%;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 40px 15px;
+            box-sizing: border-box;
+        }
+
+        .resume-dev .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        /* Replicating the stylized gray ribbon headers */
+        .resume-dev .sidebar-section h2 {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: normal;
+            padding: 8px 12px;
+            margin: 0 0 20px 0;
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .resume-dev .sidebar-section h2.hard-skills-title {
+            color: #bbf2f6;
+        }
+
+        .resume-dev .sidebar-section h2.soft-skills-title {
+            color: #cbf3cc;
+        }
+
+        .resume-dev .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resume-dev .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 12px;
+            word-break: break-all;
+            line-height: 1.4;
+        }
+
+        .resume-dev .contact-list i {
+            margin-right: 12px;
+            font-size: 16px;
+            width: 16px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .resume-dev .contact-list a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .resume-dev .skills-list {
+            list-style: none;
+            padding: 0 5px;
+            margin: 0;
+        }
+
+        .resume-dev .skills-list li {
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* Right Content Pane Styling */
+        .resume-dev .main-content {
+            width: 68%;
+            padding: 40px 35px;
+            box-sizing: border-box;
+        }
+
+        .resume-dev .header-name {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .resume-dev .header-name h1 {
+            font-family: 'Georgia', serif;
+            font-size: 56px;
+            font-weight: normal;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: #111;
+        }
+
+        .resume-dev .header-name h1 span {
+            display: block;
+            font-style: normal;
+            font-size: 46px;
+            margin-top: -5px;
+        }
+
+        .resume-dev .header-name .title-sub {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            margin: 15px 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .resume-dev .header-name .divider {
+            border-bottom: 1px solid #777;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .resume-dev h3 {
+            font-size: 22px;
+            margin: 25px 0 10px 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+
+        .resume-dev p.about-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #333;
+            margin: 0 0 20px 0;
+            text-align: justify;
+        }
+
+        .resume-dev .project-item, .resume-dev .education-item {
+            margin-bottom: 18px;
+        }
+
+        .resume-dev .item-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .resume-dev .item-date {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .resume-dev .item-desc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resume-dev .item-desc-list li {
+            font-size: 12.5px;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            color: #333;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        /* Simulates the dash symbol bullets used in the image */
+        .resume-dev .item-desc-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+    </style>
 </head>
 <body id="home">
     <div id="resume-container">
         <header id="top-name">
-            <h1>
-                His Resume(s)
-            </h1>
+            <h1>His Resume(s)</h1>
         </header>
     </div>
+    
     <section id="restainer">
-        <iframe src="pdfs/NateResume.pdf" width="900" height="900" style="border: none;">
-        </iframe>
-                <iframe src="pdfs/CART Resume (pdf) (1).pdf" width="900" height="900" style="border: none;">
-        </iframe>
         
+        <div class="resume-misc">
+            <h1>Nate Cook</h1>
+            <div class="contact-info">
+                Clovis, CA 93612 | (747)-258-1888 | <a href="mailto:Nategcook@gmail.com">Nategcook@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <strong>WWW:</strong> <a href="https://www.linkedin.com/in/nt-ck/" target="_blank">https://www.linkedin.com/in/nt-ck/</a>
+            </div>
+
+            <h2>Summary</h2>
+            <p>Aspiring Student at the Center for Advanced Research and Technology with an interest in Collaborative ethics, and different personality types. Skills include valued service, effective, communication, distinguished time management, and positive work ethics. Seeking entry level opportunities to gain more experience in quality of life improvements.</p>
+
+            <h2>Skills</h2>
+            <ul class="skills-grid">
+                <li>Surface Cleaning</li>
+                <li>Problem Solving</li>
+                <li>Time Management</li>
+                <li>Communication</li>
+                <li>Customer Service</li>
+                <li>Conflict Resolution</li>
+                <li>Team Collaboration</li>
+            </ul>
+
+            <h2>Experience</h2>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span>Janitorial Assistant</span>
+                    <span>09/2025 - Current</span>
+                </div>
+                <div class="company-location">Fresno First Baptist Church - Fresno, California</div>
+                <ul>
+                    <li>Vacuumed and sanitized main worship hall, ensuring that the environment is welcoming</li>
+                    <li>Delivered supplies to various volunteers to make setting up service simpler.</li>
+                    <li>Logged valuable community service hours through our church's activities, and events.</li>
+                </ul>
+            </div>
+
+            <h2>Education and Training</h2>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span>Clovis High School - Clovis, CA</span>
+                    <span>Expected in 06/2027</span>
+                </div>
+                <ul>
+                    <li>GPA: 3.0</li>
+                    <li>Honor Roll: Spring 2023</li>
+                </ul>
+            </div>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span>Web Development</span>
+                    <span></span>
+                </div>
+                <div class="company-location" style="font-weight: bold; color: #333; margin-top: 5px;">Center For Advanced Research And Technology - Clovis, CA</div>
+                <ul>
+                    <li>Class offers additional College credits.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="resume-dev">
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h2>Contact me</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>1-747-258-1888</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Nategcook@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>Linkedin:<br><a href="https://www.linkedin.com/in/nt-ck/" target="_blank">https://www.linkedin.com/in/nt-ck/</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-github"></i>
+                            <span>Github:<br><a href="https://github.com/Dafreeman794" target="_blank">github.com/Dafreeman794</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="hard-skills-title">Hard Skills</h2>
+                    <ul class="skills-list">
+                        <li>-HTML, CSS, and JavaScript (ES6+)</li>
+                        <li>-UX Design</li>
+                        <li>-Figma's Design Software</li>
+                        <li>-AI Output/Generation.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="soft-skills-title">Soft Skills</h2>
+                    <ul class="skills-list">
+                        <li>-Team Collaboration</li>
+                        <li>-Prioritized Time Management</li>
+                        <li>-Lateral Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="header-name">
+                    <h1>NATE <span>Cook</span></h1>
+                    <div class="title-sub">Web Developer</div>
+                    <div class="divider"></div>
+                </div>
+
+                <h3>About Me</h3>
+                <p class="about-text">Aspiring Web designer at the Center for Advanced Research and Technology with an interest in game design, and seasoned in user input, and web application. Contains professional skills such as collaborative ethics, cognitive problem solving, and creative storytelling. Seeking tech-oriented, collaborative opportunities.</p>
+
+                <h3>Projects</h3>
+                
+                <div class="project-item">
+                    <div class="item-title">Fresno Chaffee Zoo Project</div>
+                    <ul class="item-desc-list">
+                        <li>Developed a more user-friendly Enrichment tracking interface for the FCZ</li>
+                        <li>Designed a much simpler method of logging enrichment with a group of 5</li>
+                        <li>Optimized the User flow to be more interactive, and intuitive using Figma's design tools</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-title">PawPal Pet Tracking Site</div>
+                    <ul class="item-desc-list">
+                        <li>Created a pet tracking website, and mobile application</li>
+                        <li>Contains scheduling features, special need care, and exercise logging.</li>
+                        <li>Tomogatchi-themed front</li>
+                        <li>Utilized JavaScript's versatile binding to design logging, account saving, and editorial need functions</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-title">Bio-Shield/AI Experimentation</div>
+                    <ul class="item-desc-list">
+                        <li>Used AI generative functioning to create a site for a bug extermination company</li>
+                        <li>Prompt engineered the output, and experimentation of the AI based on what was asked of it</li>
+                    </ul>
+                </div>
+
+                <h3>Education</h3>
+                
+                <div class="education-item">
+                    <div class="item-title">Center for Advanced Research and Technology (CART)</div>
+                    <div class="item-date">2025 - 2027</div>
+                    <ul class="item-desc-list">
+                        <li>Currently enrolled in Web Application, and Design, and will transition to Interactive Game Design at the end of the year</li>
+                    </ul>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">Clovis High School</div>
+                    <div class="item-date">2023 - Present</div>
+                    <ul class="item-desc-list">
+                        <li>Expected graduation is 2027 and focused currently on heading to big tech UCs such as UC Santa Cruz, and Monterey Bay</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </section>
 </body>
 <script src="folio.js"></script>
